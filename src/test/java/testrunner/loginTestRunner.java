@@ -1,8 +1,12 @@
+package testrunner;
+
+import config.Setup;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 
-public class loginTestRunner extends Setup{ // Inherits Setup class's driver.
+public class loginTestRunner extends Setup { // Inherits config.Setup class's driver.
 // This is called --> Executable Script
     LoginPage loginPage;
 
