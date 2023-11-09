@@ -21,11 +21,11 @@ public class DashboardPage {
     @FindBy(className = "oxd-switch-input")
     WebElement btnSwitch;
 
-    public DashboardPage(WebDriver driver){
+    public DashboardPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public void createUser(String firstName, String lastName, String userName, String password){
+    public void createUser(String firstName, String lastName, String userName, String password) {
         menuItems.get(1).click(); //Click PIM
         buttons.get(2).click(); //Click add button
         formTextFields.get(1).sendKeys(firstName);
