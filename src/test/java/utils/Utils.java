@@ -1,5 +1,6 @@
 package utils;
 
+import config.EmployeeModel;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -11,15 +12,15 @@ import java.io.IOException;
 import java.util.*;
 
 public class Utils {
-    public static void saveEmployeeInfo(String firstName, String lastName, String userName, String password) throws IOException, ParseException {
+    public static void saveEmployeeInfo(EmployeeModel model) throws IOException, ParseException {
         String file="./src/test/resources/employees.json";
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(file));
         JSONObject empObj = new JSONObject();
-        empObj.put("firstName", firstName);
-        empObj.put("lastName", lastName);
-        empObj.put("userName", userName);
-        empObj.put("password", password);
+        empObj.put("firstName", model.getFirstname());
+        empObj.put("lastName", model.getLastname());
+        empObj.put("userName", model.getUsername());
+        empObj.put("password", model.getPassword());
 
         jsonArray.add(empObj);
 
@@ -28,10 +29,9 @@ public class Utils {
         writer.flush();
         writer.close();
     }
-    public static JSONArray readEmployeeInfo() throws IOException, ParseException {
-        String file="./src/test/resources/employees.json";
+    public static JSONArray readJSONList(String filename) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(file));
+        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(filename));
         return jsonArray;
     }
 }

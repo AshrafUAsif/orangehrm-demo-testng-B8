@@ -38,6 +38,9 @@ public class EmployeeModel {
         this.password = password;
     }
 
+    public EmployeeModel(){
+
+    }
     public EmployeeModel(String firstname, String lastname, String username , String password){
         this.firstname = firstname;
         this.lastname = lastname;
@@ -45,4 +48,5 @@ public class EmployeeModel {
         this.password = password;
 
     }
+
 }
