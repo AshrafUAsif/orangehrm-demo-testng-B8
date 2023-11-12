@@ -1,16 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">-->
+<?xml version="1.0" encoding="UTF-8" ?>
+
 <suite name="Orange HRM portal automation">
     <test name="Create User">
-            <classes>
-                <class name="testrunner.DashboardTestRunner"></class>
-            </classes>
+        <classes>
+            <class name="testrunner.DashboardTestRunner">
+
+            </class>
+        </classes>
     </test>
     <test name="Login new User">
         <classes>
-            <class name="testrunner.UserLoginTestRunner"></class>
+            <class name="testrunner.UserLoginTestRunner">
+
+            </class>
         </classes>
     </test>
-
-
 </suite>

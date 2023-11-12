@@ -21,7 +21,8 @@ public class loginTestRunner extends Setup { // Inherits config.Setup class's dr
         Assert.assertEquals(textActual, textExpected);
     }
     @Test(priority = 2)
-    public void doLogin(){
+    public void doLogin() throws InterruptedException {
+        Thread.sleep(2000);
         loginPage = new LoginPage(driver);
         loginPage.doLogin("Admin", "admin123");
         Assert.assertTrue(driver.findElement(By.className("oxd-userdropdown-img")).isDisplayed());

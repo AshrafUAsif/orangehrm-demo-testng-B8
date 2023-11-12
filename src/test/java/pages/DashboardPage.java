@@ -18,7 +18,7 @@ public class DashboardPage {
     @FindBy(className = "oxd-input")
     List<WebElement> formTextFields;
 
-    @FindBy(className = "oxd-switch-input")
+    @FindBy(css = ".oxd-switch-input.oxd-switch-input--active.--label-right")
     WebElement btnSwitch;
 
     public DashboardPage(WebDriver driver) {
