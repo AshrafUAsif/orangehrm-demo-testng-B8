@@ -30,14 +30,22 @@ public class DashboardTestRunner extends Setup {
         String lastName = faker.name().lastName();
         String userName = faker.name().username();
         String password = faker.internet().password();
-        //EmployeeModel model = new EmployeeModel();
-        dashboardPage.createUser(firstName, lastName, userName, password);
+
+        EmployeeModel model = new EmployeeModel();
+        model.setFirstname(firstName);
+        model.setLastname(lastName);
+        model.setUsername(userName);
+        model.setPassword(password);
+
+
+
+        dashboardPage.createUser(model);
         String textTitleExpected = driver.findElement(By.xpath("//*[contains(text(),\"Personal Details\")]")).getText();
         System.out.println(textTitleExpected);
         Thread.sleep(5000);
 
         if (textTitleExpected.contains("Personal Details")) {
-            Utils.saveEmployeeInfo(firstName, lastName, userName, password);
+            Utils.saveEmployeeInfo(model);
         }
         Thread.sleep(5000);
     }

@@ -1,5 +1,11 @@
 [
   {
+    "firstName": "Admin",
+    "lastName": "Last",
+    "password": "admin123",
+    "userName": "admin"
+  },
+  {
     "firstName": "Test",
     "lastName": "User",
     "password": "Asif199069",
@@ -40,5 +46,11 @@
     "lastName": "Smith",
     "password": "719zsms2nor9",
     "userName": "bernarda.walter"
+  },
+  {
+    "firstName": "Karol",
+    "lastName": "Bechtelar",
+    "password": "q4cw2dn2jhw408",
+    "userName": "clay.kirlin"
   }
 ]
