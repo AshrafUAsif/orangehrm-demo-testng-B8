@@ -22,4 +22,10 @@ public class UserLoginTestRunner extends Setup {
         loginPage.doLogin(userName, password);
     }
 
+    public static void main(String[] args) throws IOException, ParseException {
+        JSONArray empList = Utils.readEmployeeInfo();
+        JSONObject empObj = (JSONObject) empList.get(1);
+        System.out.println(empObj.get("userName"));
+    }
+
 }

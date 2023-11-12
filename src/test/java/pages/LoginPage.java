@@ -10,34 +10,31 @@ import java.util.List;
 public class LoginPage {
 // This is called --> Test Step Script
 
-    @FindBy(name = "username")
+    @FindBy(css = "input[placeholder='Username']")
     WebElement txtUsername;
 
-    @FindBy(name = "password")
+    @FindBy(xpath = "//input[@placeholder='Password']")
     WebElement txtPassword;
 
     @FindBy(tagName = "button")
     WebElement btnLogin;
 
+
     @FindBy(className = "oxd-userdropdown-name")
     WebElement btnUserProfile;
 
-     @FindBy(className = "oxd-userdropdown-link")
-     List<WebElement> linkSubItems;
+    @FindBy(className = "oxd-userdropdown-link")
+    List<WebElement> linkSubItems;
 
-    // Page Object model এর সাপোর্টার হিসেবে এই PageFactory use হয়
-    // এক পেইজ থেকে অন্য পেইজে ডাটা পাঠাতে এই PageFactory কাজ করে
-    //Creating Test Factory
-    public  LoginPage(WebDriver driver){ // (pass through as parameter)
-        PageFactory.initElements(driver, this);
-
+    public LoginPage(WebDriver driver){
+        PageFactory.initElements(driver,this);
     }
-    public void doLogin(String username, String password){
-        txtUsername.sendKeys(username);
+
+    public void doLogin(String userName, String password){
+        txtUsername.sendKeys(userName);
         txtPassword.sendKeys(password);
         btnLogin.click();
     }
-
     public void doLogout() throws InterruptedException {
         Thread.sleep(2000);
         btnUserProfile.click();
