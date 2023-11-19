@@ -11,13 +11,16 @@ import java.util.List;
 public class DashboardPage {
 
     @FindBy(className = "oxd-main-menu-item--name")
-    List<WebElement> menuItems;
+    public List<WebElement> menuItems;
 
     @FindBy(className = "oxd-button")
     List<WebElement> buttons;
 
     @FindBy(className = "oxd-input")
     List<WebElement> formTextFields;
+
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/input[1]")
+    WebElement empIdField;
 
     @FindBy(css = ".oxd-switch-input.oxd-switch-input--active.--label-right")
     WebElement btnSwitch;
@@ -27,10 +30,11 @@ public class DashboardPage {
     }
 
     public void createUser(EmployeeModel model) {
-        menuItems.get(1).click(); //Click PIM
+
         buttons.get(2).click(); //Click add button
         formTextFields.get(1).sendKeys(model.getFirstname());
         formTextFields.get(3).sendKeys(model.getLastname());
+        empIdField.clear();
         btnSwitch.click(); //Toggle switch
         formTextFields.get(5).sendKeys(model.getUsername());
         formTextFields.get(6).sendKeys(model.getPassword());
